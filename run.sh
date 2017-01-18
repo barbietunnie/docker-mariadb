@@ -17,7 +17,7 @@ docker rm "${NAME}" || true
 sleep 1
 docker run --detach=true --restart=always --name "${NAME}" --volume "${MYSQL_LOG}:/var/log/mysql" --volume "${MYSQL_DATA}:/var/lib/mysql" tozd/mysql
 
-sleep 2
+#sleep 2
 
-chmod +x ./final-setup.sh
-./final-setup.sh
+#chmod +x ./final-setup.sh
+#./final-setup.sh
