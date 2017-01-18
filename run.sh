@@ -3,7 +3,7 @@
 # An example script to run MySQL (MariaDB fork) in production. It uses data volumes under the $DATA_ROOT directory.
 # By default /srv.
 
-NAME='mysql'
+NAME='mysql' # container name
 DATA_ROOT='/srv'
 MYSQL_DATA="${DATA_ROOT}/${NAME}/data"
 MYSQL_LOG="${DATA_ROOT}/${NAME}/log"
@@ -16,3 +16,8 @@ sleep 1
 docker rm "${NAME}" || true
 sleep 1
 docker run --detach=true --restart=always --name "${NAME}" --volume "${MYSQL_LOG}:/var/log/mysql" --volume "${MYSQL_DATA}:/var/lib/mysql" tozd/mysql
+
+sleep 2
+
+chmod +x ./final-setup.sh
+./final-setup.sh

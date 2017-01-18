@@ -1,4 +1,9 @@
+# This file creates a container that runs MySQL Server (MariaDB variant)
+#
+# Author: Babatunde Adeyemi
+# Date: 17/01/2017
 FROM tozd/runit
+MAINTAINER Babatunde Adeyemi "me@tundeadeyemi.com"
 
 EXPOSE 3306/tcp
 
